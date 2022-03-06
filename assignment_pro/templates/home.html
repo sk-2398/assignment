@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Welcome to home page</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div  class="form1">
+            <input type="text" name='name' placeholder="Enter your name" required>
+            <input type="email" name='email' placeholder="Enter your name" required>
+            
+            <p>{{error}}</p>
+            
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+          
+            <input type="submit" class="submit">
+        </div>
+        
+    </form>
+    <script src="{% static 'js/script.js'%}"></script>
+</body>
+</html>
